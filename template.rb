@@ -57,6 +57,16 @@ def apply_template!
   end
 
   run_react_on_rails_installer
+
+  if empty_git_repo?
+    git :add => "-A ."
+    git :commit => "-n -m 'Run webpacker and react_on_rails installers'"
+    git :checkout => "-b development"
+    if git_repo_specified?
+      git :remote => "add origin #{git_repo_url.shellescape}"
+      git :push => "-u origin --all"
+    end
+  end
 end
 
 require "fileutils"
@@ -185,6 +195,8 @@ def run_rubocop_autocorrections
 end
 
 def run_react_on_rails_installer
+  run_with_clean_bundler_env("bundle exec rails webpacker:install")
+  run_with_clean_bundler_env("bundle exec rails webpacker:install:react")
   run_with_clean_bundler_env("spring stop && rails generate react_on_rails:install")
 end
 
