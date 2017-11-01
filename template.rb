@@ -43,8 +43,6 @@ def apply_template!
   )
   run_with_clean_bundler_env "bundle binstubs #{binstubs.join(' ')}"
 
-  run_react_on_rails_installer
-
   template "rubocop.yml.tt", ".rubocop.yml"
   run_rubocop_autocorrections
 
@@ -57,6 +55,8 @@ def apply_template!
       git :push => "-u origin --all"
     end
   end
+
+  run_react_on_rails_installer
 end
 
 require "fileutils"
