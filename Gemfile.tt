@@ -9,6 +9,10 @@ gem "active_type", ">= 0.3.2"
 gem "bcrypt"<%= gemfile_requirement("bcrypt") %>
 gem "bootsnap", ">= 1.1.0", :require => false
 gem "dotenv-rails", ">= 2.0.0"
+
+# For Server Side React on Rails Rendering 
+gem "execjs"
+
 gem "jquery-rails"<%= gemfile_requirement("jquery-rails") %>
 gem "mail", ">= 2.6.3"
 gem "marco-polo"
