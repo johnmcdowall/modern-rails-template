@@ -43,6 +43,8 @@ def apply_template!
   )
   run_with_clean_bundler_env "bundle binstubs #{binstubs.join(' ')}"
 
+  run_react_on_rails_installer
+
   template "rubocop.yml.tt", ".rubocop.yml"
   run_rubocop_autocorrections
 
@@ -180,6 +182,10 @@ end
 
 def run_rubocop_autocorrections
   run_with_clean_bundler_env "bin/rubocop -a --fail-level A > /dev/null"
+end
+
+def run_react_on_rails_installer
+  run_with_clean_bundler_env  "bin/rails generate react_on_rails:install"
 end
 
 apply_template!
