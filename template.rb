@@ -22,7 +22,7 @@ def apply_template!
 
   copy_file "Capfile"
   copy_file "Guardfile"
-  copy_file "Procfile.dev"
+  #copy_file "Procfile.dev"
 
   apply "app/template.rb"
   apply "bin/template.rb"
