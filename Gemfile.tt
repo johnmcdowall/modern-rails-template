@@ -12,14 +12,14 @@ gem "dotenv-rails", ">= 2.0.0"
 gem "jquery-rails"<%= gemfile_requirement("jquery-rails") %>
 gem "mail", ">= 2.6.3"
 gem "marco-polo"
-gem "pg"<%= gemfile_requirement("pg") || ', "~> 0.18"' %>
+gem "pg"<%= gemfile_requirement("pg") || ", "~> 0.18"" %>
 gem "pgcli-rails"
-gem "puma", '~> 3.7'
+gem "puma", "~> 3.7"
 gem "rails", "<%= Rails.version %>"
 gem "react_on_rails", "10.0.0"
 gem "webpacker", "~> 3.0"
 
-gem 'redis', '~> 3.0'
+gem "redis", "~> 3.0"
 gem "sass-rails"<%= gemfile_requirement("sass-rails") %>
 gem "secure_headers", "~> 3.0"
 gem "sidekiq", ">= 4.2.0"
@@ -37,8 +37,8 @@ group :development do
   gem "brakeman", :require => false
   gem "bundler-audit", ">= 0.5.0", :require => false
   
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Call "byebug" anywhere in the code to stop execution and get a debugger console
+  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
   gem "capistrano", "~> 3.6", :require => false
   gem "capistrano-bundler", "~> 1.2", :require => false
@@ -60,13 +60,13 @@ group :development do
   gem "simplecov", :require => false
   gem "spring"
   gem "sshkit", "~> 1.8", :require => false
-  gem "spring-watcher-listen", '~> 2.0.0'
+  gem "spring-watcher-listen", "~> 2.0.0"
   gem "terminal-notifier", :require => false
   gem "terminal-notifier-guard", :require => false
 
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Access an IRB console on exception pages or by using `<%%= console %%>` anywhere in the code.
+  gem "web-console", ">= 3.3.0"
+  gem "listen", ">= 3.0.5", "< 3.2"
 end
 
 group :test do
@@ -79,4 +79,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
