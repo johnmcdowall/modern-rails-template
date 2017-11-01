@@ -185,7 +185,7 @@ def run_rubocop_autocorrections
 end
 
 def run_react_on_rails_installer
-  !system("rails generate react_on_rails:install")
+  system("rails generate react_on_rails:install")
 end
 
 apply_template!
