@@ -1,4 +1,4 @@
-# mattbrictson/rails-template
+# Modern Rails Template
 
 ## Description
 
