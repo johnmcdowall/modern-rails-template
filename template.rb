@@ -1,4 +1,4 @@
-RAILS_REQUIREMENT = "~> 5.1.0".freeze
+RAILS_REQUIREMENT = "~> 5.1.3".freeze
 
 def apply_template!
   assert_minimum_rails_version
@@ -30,9 +30,6 @@ def apply_template!
   apply "doc/template.rb"
   apply "lib/template.rb"
   apply "test/template.rb"
-
-  install_webpacker!
-  install_react_on_rails!
 
   git :init unless preexisting_git_repo?
   empty_directory ".git/safe"
@@ -183,15 +180,6 @@ end
 
 def run_rubocop_autocorrections
   run_with_clean_bundler_env "bin/rubocop -a --fail-level A > /dev/null"
-end
-
-def install_webpacker!
-  run_with_clean_bundler_env('bundle exec rails webpacker:install')
-  run_with_clean_bundler_env('bundle exec rails webpacker:install:react')
-end
-
-def install_react_on_rails!
-  rails generate react_on_rails:install
 end
 
 apply_template!
