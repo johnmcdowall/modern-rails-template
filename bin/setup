@@ -7,7 +7,7 @@ def setup!
     run  "bundle install"
     run  "bundle exec overcommit --sign"
     run  "bundle exec overcommit --install"
-    run  "bin/rails generate react_on_rails:install"
+    run  "bundle exec rails generate react_on_rails:install"
     copy "example.env"
     copy "config/database.example.yml"
     test_local_env_contains_required_keys
