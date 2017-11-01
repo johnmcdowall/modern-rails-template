@@ -22,6 +22,7 @@ def apply_template!
 
   copy_file "Capfile"
   copy_file "Guardfile"
+  copy_file "Procfile.dev"
 
   apply "app/template.rb"
   apply "bin/template.rb"
@@ -29,7 +30,6 @@ def apply_template!
   apply "doc/template.rb"
   apply "lib/template.rb"
   apply "test/template.rb"
-  apply "Procfile.dev"
 
   install_webpacker!
   install_react_on_rails!
