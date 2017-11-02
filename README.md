@@ -79,7 +79,7 @@ The template will perform the following steps:
     * [rubocop][] – enforces Ruby code style
     * [xray-rails][] – inspect view partials in the browser
 * Deployment
-    * [capistrano-mb][] – capistrano recipes
+    * [capistrano-atlas][] – capistrano recipes
 * Security
     * [brakeman][] and [bundler-audit][] – detect security vulnerabilities
     * [secure_headers][] – hardens your app against XSS attacks
@@ -123,7 +123,7 @@ Rails generators are very lightly documented; what you’ll find is that most of
 [guard]:https://github.com/guard/guard
 [livereload]:https://github.com/guard/guard-livereload
 [rubocop]:https://github.com/bbatsov/rubocop
-[capistrano-mb]:https://github.com/mattbrictson/capistrano-mb
+[capistrano-atlas]:https://github.com/johnmcdowall/capistrano-atlas
 [Postmark]:http://postmarkapp.com
 [postmark-rails]:http://www.rubydoc.info/gems/postmark-rails/0.12.0
 [brakeman]:https://github.com/presidentbeef/brakeman

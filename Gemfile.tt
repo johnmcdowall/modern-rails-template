@@ -46,7 +46,7 @@ group :development do
 
   gem "capistrano", "~> 3.6", :require => false
   gem "capistrano-bundler", "~> 1.2", :require => false
-  gem "capistrano-mb", ">= 0.22.2", :require => false
+  gem "capistrano-atlas", ">= 0.0.1", :require => false
   gem "capistrano-nc", :require => false
   gem "capistrano-rails", :require => false
   gem "foreman"

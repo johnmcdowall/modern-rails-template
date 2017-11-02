@@ -127,7 +127,7 @@ def assert_foreman
         "that this system does not have it installed."
 end
 
-# Mimic the convention used by capistrano-mb in order to generate
+# Mimic the convention used by capistrano-atlas in order to generate
 # accurate deployment documentation.
 def capistrano_app_name
   app_name.gsub(/[^a-zA-Z0-9_]/, "_")
