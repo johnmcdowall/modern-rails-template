@@ -4,3 +4,5 @@ gsub_file "app/assets/javascripts/application.js", /^.*require rails-ujs$/ do
     //= require jquery_ujs
   JAVASCRIPT
 end
+
+gsub_file "app/assets/javascripts/application.js", /^.*require turbolinks$/, ""
