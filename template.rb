@@ -22,7 +22,6 @@ def apply_template!
 
   copy_file "Capfile"
   copy_file "Guardfile"
-  #copy_file "Procfile.dev"
 
   apply "app/template.rb"
   apply "bin/template.rb"
@@ -201,7 +200,11 @@ def run_react_on_rails_installer
   # Make react_on_rails installer happy
   make_git_commit("Run webpacker installers")
 
-  run_with_clean_bundler_env("spring stop && rails generate react_on_rails:install")
+  include_redux = ask_with_default("Install react_on_rails with Redux?", :blue, "no")
+
+  opts = include_redux != "no" ? "--redux" : "--no-redux"
+
+  run_with_clean_bundler_env("spring stop && rails generate react_on_rails:install #{opts}")
 
   make_git_commit("Run react_on_rails installers")
 end
