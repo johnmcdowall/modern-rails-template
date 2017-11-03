@@ -206,6 +206,9 @@ def run_react_on_rails_installer
 
   run_with_clean_bundler_env("spring stop && rails generate react_on_rails:install #{opts}")
 
+  # Re-generate the webpack binstubs so they actually can accept command line args
+  run_with_clean_bundler_env("rm ./bin/webpack ./bin/webpack-dev-server && bundle binstub webpacker --standalone")
+
   make_git_commit("Run react_on_rails installers")
 end
 
