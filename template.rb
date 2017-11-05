@@ -46,6 +46,7 @@ def apply_template!
   run_rubocop_autocorrections
 
   if empty_git_repo?
+    system("echo \".DS_Store\" >> .gitignore")
     git :add => "-A ."
     git :commit => "-n -m 'Setup project'"
     git :checkout => "-b development"
